@@ -1,0 +1,14 @@
+<div class="my-select">
+  <div class="my-select_view" (click)="openCloseSelectoptions()">
+    <span>{{selectValueSelected}}</span>
+    <div class="my-select_menu-arrow"></div>
+  </div>
+  <div class="my-select_options" [style.display]="isSelectOpen ? 'block' : 'none'">
+    <div class="my-select_option" *ngFor="let item of optionsArray; let i = index" (click)="getValue(i + 1)">
+        {{item}}
+    </div>
+  </div>
+  <select name="select-test" [(ngModel)]="selectValueSelected">
+    <option *ngFor="let item of array; let i = index" value="{{item}}">{{item}}</option>
+  </select>
+</div>
